@@ -1,0 +1,13 @@
+{
+  "name": "docu",
+  "version": "0.01.0",
+  "description": "DOCU Documentation and File Browser System",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py",
+    "test": "python verify_milestone.py",
+    "backup": "python docu_backup.py docu_src_v0.01"
+  },
+  "author": "",
+  "license": "ISC"
+}
