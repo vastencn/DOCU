@@ -1,5 +1,31 @@
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
-results/
-backups/
+*.py[cod]
+*$py.class
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE and Editor configurations
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Generated Project Artifacts & Reports
 Reports/
+backups/
+results/
+*.zip
+*.log

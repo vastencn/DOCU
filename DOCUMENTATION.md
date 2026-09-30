@@ -9,20 +9,26 @@ DOCU is a lightweight, modern, code-driven documentation tool and file browser b
 
 ```text
 E:\DOCU\
+├── .gitignore               # Comprehensive Git ignore rules (Python, IDE, OS, Reports)
 ├── AGENT.md                 # System Directive & Standard Operating Procedure (SOP)
 ├── DOCUMENTATION.md         # Map of project architecture and module responsibilities
 ├── CHANGELOG.md             # Chronological ledger of versions and modifications
+├── README.md                # Repository overview, installation, and usage documentation
+├── requirements.txt         # Pinned Python package dependencies
+├── pyproject.toml           # Standard Python package and build configuration
 ├── docu_backup.py           # Verification and backup automation script
 ├── verify_milestone.py      # Automated verification runner (v0.01)
 ├── verify_milestone_v02.py  # Automated verification runner (v0.02)
 ├── main.py                  # Application entry point
 ├── package.json             # Workspace metadata and configuration
-├── backups/                 # Validated ZIP archives generated per milestone
-├── Reports/                 # Generated aggregate documentation text reports
-├── results/                 # Verification outputs and test logs
+├── backups/                 # Validated ZIP archives generated per milestone (ignored by git)
+├── Reports/                 # Generated aggregate documentation text reports (ignored by git)
+├── results/                 # Verification outputs and test logs (ignored by git)
 │   ├── v0.01/
 │   │   └── operational_log.txt
-│   └── v0.02/
+│   ├── v0.02/
+│   │   └── operational_log.txt
+│   └── v0.03/
 │       └── operational_log.txt
 └── src/
     ├── ui/

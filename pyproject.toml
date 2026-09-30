@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docu"
+version = "0.03.0"
+description = "Modern CustomTkinter documentation tool and workspace aggregator"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "customtkinter>=6.0.0",
+    "darkdetect>=0.8.0"
+]
+
+[project.scripts]
+docu = "main:main"

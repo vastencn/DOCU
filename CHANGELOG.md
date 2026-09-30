@@ -2,6 +2,17 @@
 
 All notable changes and milestones for the DOCU project will be documented in this file.
 
+## [v0.03] - 2026-09-30
+
+### Changed
+- Standardized the repository into a complete Git project architecture.
+- Added comprehensive repository documentation in `README.md`.
+- Added standard Python project dependency specifications in `requirements.txt`.
+- Added modern Python package configuration in `pyproject.toml`.
+- Expanded `.gitignore` with comprehensive exclusions for Python, virtual environments, IDE configurations, OS files, and dynamic report artifacts.
+- Migrated primary default Git branch to `main`.
+- Tagged milestone versions for release history.
+
 ## [v0.02] - 2026-09-30
 
 ### Added
