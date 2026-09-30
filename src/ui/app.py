@@ -3,6 +3,7 @@ import customtkinter as ctk
 from tkinter import filedialog
 from typing import Dict, List, Any
 from src.utils.file_scanner import scan_directory, read_file_preview
+from src.ui.aggregate_modal import AggregateModal
 
 class FileBrowserApp(ctk.CTk):
     def __init__(self, initial_dir: str = r"E:\DOCU"):
@@ -57,6 +58,17 @@ class FileBrowserApp(ctk.CTk):
             hover_color="#144870"
         )
         btn_browse.pack(side="left", padx=(0, 6))
+
+        btn_aggregate = ctk.CTkButton(
+            row1,
+            text="Create Aggregate",
+            width=135,
+            height=34,
+            command=self.open_aggregate_dialog,
+            fg_color="#28a745",
+            hover_color="#218838"
+        )
+        btn_aggregate.pack(side="left", padx=(0, 6))
 
         btn_refresh = ctk.CTkButton(
             row1, 
@@ -309,3 +321,26 @@ class FileBrowserApp(ctk.CTk):
         current = ctk.get_appearance_mode()
         new_mode = "Light" if current == "Dark" else "Dark"
         ctk.set_appearance_mode(new_mode)
+
+    def open_aggregate_dialog(self):
+        """Opens the modal dialog to select file types and generate an aggregate file."""
+        target = self.entry_path.get().strip()
+        if not target or not os.path.isdir(target):
+            target = self.current_dir
+        if not os.path.isdir(target):
+            self.lbl_status.configure(text=f"Invalid folder: {target}")
+            return
+
+        AggregateModal(self, target_dir=target, on_success_callback=self._on_aggregate_success)
+
+    def _on_aggregate_success(self, report_path: str):
+        """Callback invoked when an aggregate report is created."""
+        self.lbl_status.configure(text=f"Report created: {os.path.basename(report_path)}")
+        if os.path.exists(report_path):
+            file_info = {
+                "name": os.path.basename(report_path),
+                "size_str": f"{os.path.getsize(report_path) / 1024:.1f} KB",
+                "ext": ".txt"
+            }
+            self.preview_file(report_path, file_info)
+

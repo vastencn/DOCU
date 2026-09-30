@@ -6,7 +6,7 @@ import sys
 # Configuration
 SOURCE_DIR = r"E:\DOCU"
 BACKUP_DIR = os.path.join(SOURCE_DIR, "backups")
-EXCLUDE_DIRS = {"node_modules", "backups", "results", ".git", ".idea", "dist", "build", "__pycache__"}
+EXCLUDE_DIRS = {"node_modules", "backups", "results", "Reports", ".git", ".idea", "dist", "build", "__pycache__"}
 ALLOWED_EXTS = {".js", ".json", ".md", ".rs", ".html", ".css", ".ts", ".txt", ".ps1", ".py", ".glsl"}
 MAX_PREFLIGHT_SIZE_MB = 50
 
